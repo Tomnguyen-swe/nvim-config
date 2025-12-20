@@ -14,7 +14,7 @@ return {
 			-- Map filetypes to formatters (order = priority)
 			formatters_by_ft = {
 				-- TS / TSX
-				typescript = { "prettier", "prettierd" },
+				typescrip = { "prettier", "prettierd" },
 				typescriptreact = { "prettier", "prettierd" }, -- TSX
 				javascript = { "prettier", "prettierd" },
 				javascriptreact = { "prettier", "prettierd" },

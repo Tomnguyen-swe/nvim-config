@@ -30,11 +30,21 @@ return {
       -- settings = { ... }
     })
 
+    vim.lsp.config.html = vim.tbl_extend("force", common, {
+      -- settings = { ... }
+    })
+    
+    vim.lsp.config.cssls = vim.tbl_extend("force", common, {
+      -- settings = { ... }
+    })
+
     -- Enable servers
     vim.lsp.enable("gopls")
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("sqlls")
     vim.lsp.enable("tailwindcss")
+    vim.lsp.enable("html")
+    vim.lsp.enable("cssls")
   end,
 }
 
