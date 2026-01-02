@@ -14,13 +14,13 @@ return {
 			-- Map filetypes to formatters (order = priority)
 			formatters_by_ft = {
 				-- TS / TSX
-				typescrip = { "prettier", "prettierd" },
-				typescriptreact = { "prettier", "prettierd" }, -- TSX
-				javascript = { "prettier", "prettierd" },
-				javascriptreact = { "prettier", "prettierd" },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" }, -- TSX
+				javascript = { "prettierd" },
+				javascriptreact = { "prettierd" },
 
 				-- vanilla html css
-				html = { "prettier", "prettierd" },
+				html = { "prettierd" },
 
 				-- Go
 				go = { "goimports", "gofumpt" }, -- goimports fixes imports; gofumpt enforces style
@@ -28,13 +28,11 @@ return {
 				-- SQL
 				sql = { "sqlfluff" }, -- or { "pg_format" } if you prefer
 
-				--PHP
-				php = { "pretty-php" },
 			},
 
 			-- Autoformat on save
 			format_on_save = {
-				timeout_ms = 1000,
+				timeout_ms = 3000,
 				lsp_fallback = true, -- use LSP if no formatter is found
 			},
 		})

@@ -38,6 +38,26 @@ vim.keymap.set("n", "<C-g>", function()
   require("telescope.builtin").git_files()
 end, { desc = "Find git files" })
 
+--for claude code 
+-- Enable auto-reading files when changed outside Neovim
+vim.opt.autoread = true
+
+-- Trigger checktime when entering buffer or gaining focus
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  callback = function()
+    vim.cmd("checktime")
+  end,
+})
+
+-- Optional: Show notification when file reloads
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File reloaded from disk", vim.log.levels.INFO)
+  end,
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
