@@ -5,7 +5,7 @@ return {
 	lazy = false,
 	build = ":TSUpdate",
 	opts = {
-	ensure_installed = { "go", "typescript", "tsx", "sql", "lua", "vim", "vimdoc" },
+	ensure_installed = { "go", "typescript", "tsx", "sql", "lua", "vim", "vimdoc", "terraform" },
 	highlight = { enable = true },
     },
     config = function(_, opts)

@@ -38,6 +38,9 @@ return {
       -- settings = { ... }
     })
 
+    vim.lsp.config.terraform_ls = vim.tbl_extend("force", common, {
+      -- settings = { ... }
+    })
     -- Enable servers
     vim.lsp.enable("gopls")
     vim.lsp.enable("ts_ls")
@@ -45,6 +48,7 @@ return {
     vim.lsp.enable("tailwindcss")
     vim.lsp.enable("html")
     vim.lsp.enable("cssls")
+    vim.lsp.enable("terraform_ls")
   end,
 }
 
