@@ -1,19 +1,19 @@
 return {
-  "scottmckendry/cyberdream.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-    variant = "default",
-    transparent = true,
-    terminal_colors = true,
-  },
-  config = function(_, opts)
-    vim.opt.termguicolors = true
-    vim.opt.background = "dark"
-    vim.opt.winblend = 10
-    vim.opt.pumblend = 10
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+        -- Use Cyberdream's palette for Neovim's terminal buffers as well.
+        terminal_colors = true,
+        -- Let the terminal's configured 95% opacity show through.
+        transparent = true,
+    },
+    config = function(_, opts)
+        require("cyberdream").setup(opts)
+        vim.cmd.colorscheme("cyberdream")
 
-    require("cyberdream").setup(opts)
-    vim.cmd.colorscheme("cyberdream")
-  end,
+        -- Neovim expresses floating-window opacity as transparency (0-100).
+        vim.opt.winblend = 5
+        vim.opt.pumblend = 5
+    end,
 }
